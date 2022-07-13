@@ -5,4 +5,4 @@ on Orders.product_id = Products.product_id
 where year(order_date) = 2020
   and month(order_date) = 2
 group by Orders.product_id
-having sum(unit) >= 100;
+having unit >= 100;
