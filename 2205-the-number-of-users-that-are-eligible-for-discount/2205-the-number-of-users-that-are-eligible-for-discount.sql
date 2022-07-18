@@ -5,6 +5,6 @@ BEGIN
       select count(distinct user_id) as user_cnt
       from Purchases
       where time_stamp between startDate and endDate
-        and amount > minAmount
+        and amount >= minAmount
   );
 END
