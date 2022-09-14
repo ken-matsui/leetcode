@@ -25,7 +25,6 @@ public:
             seen[cur] = end;
         }
 
-        result = max(result, size - start);
         return result;
     }
 };
