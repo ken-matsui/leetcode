@@ -16,8 +16,7 @@ public:
                 const int px = p[0];
                 const int py = p[1];
 
-                int dist = distance(px, cx, py, cy);
-                if (dist <= cr) {
+                if (distance(px, cx, py, cy) <= cr) {
                     ++count;
                 }
             }
