@@ -11,22 +11,22 @@ public:
     int lengthOfLongestSubstring(string s) {
         int size = s.size();
         int result = 0;
-        unordered_map<char, int> window;
+        unordered_map<char, int> seen;
         int start = 0;
 
         for (int end = 0; end < size; ++end) {
             const char cur = s[end];
 
-            if (contains(window, cur)) {
-                if (window[cur] >= start) {
-                    start = window[cur] + 1;
+            if (contains(seen, cur)) {
+                if (seen[cur] >= start) {
+                    start = seen[cur] + 1;
                 } else {
                     result = max(result, end - start + 1);
                 }
             } else {
                 result = max(result, end - start + 1);
             }
-            window[cur] = end;
+            seen[cur] = end;
         }
 
         result = max(result, size - start);
