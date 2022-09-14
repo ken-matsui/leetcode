@@ -17,12 +17,8 @@ public:
         for (int end = 0; end < size; ++end) {
             const char cur = s[end];
 
-            if (contains(seen, cur)) {
-                if (seen[cur] >= start) {
-                    start = seen[cur] + 1;
-                } else {
-                    result = max(result, end - start + 1);
-                }
+            if (contains(seen, cur) && seen[cur] >= start) {
+                start = seen[cur] + 1;
             } else {
                 result = max(result, end - start + 1);
             }
