@@ -6,14 +6,18 @@ public:
             const int mid = first + (last - first) / 2;
             if (nums[mid] == target) {
                 return mid;
-            } else if (nums[mid] >= nums[first]) {
-                if (target >= nums[first] && target < nums[mid]) {
+            } else if (nums[first] == target) {
+                return first;
+            } else if (nums[last] == target) {
+                return last;
+            } else if (nums[mid] > nums[first]) {
+                if (nums[first] < target && target < nums[mid]) {
                     last = mid - 1;
                 } else {
                     first = mid + 1;
                 }
             } else {
-                if (target <= nums[last] && target > nums[mid]) {
+                if (nums[mid] < target && target < nums[last]) {
                     first = mid + 1;
                 } else {
                     last = mid - 1;
