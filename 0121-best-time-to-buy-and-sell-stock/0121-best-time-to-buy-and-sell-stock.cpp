@@ -6,7 +6,7 @@ public:
         int curPrice = prices[0];
         int profit = 0;
         for (int i = 1; i < size; ++i) {
-            if (prices[i] < curPrice) {
+            if (curPrice > prices[i]) {
                 curPrice = prices[i];
             }
             const int curProfit = prices[i] - curPrice;
