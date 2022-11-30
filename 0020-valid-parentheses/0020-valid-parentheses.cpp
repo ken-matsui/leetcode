@@ -1,6 +1,12 @@
 class Solution {
 public:
     bool isValid(string s) {
+        unordered_map<char, char> pair{
+            {')', '('},
+            {'}', '{'},
+            {']', '['},
+        };
+
         stack<char> st;
         for (char c : s) {
             switch (c) {
@@ -10,19 +16,9 @@ public:
                     st.emplace(c);
                     break;
                 case ')':
-                    if (st.empty() || st.top() != '(') {
-                        return false;
-                    }
-                    st.pop();
-                    break;
                 case '}':
-                    if (st.empty() || st.top() != '{') {
-                        return false;
-                    }
-                    st.pop();
-                    break;
                 case ']':
-                    if (st.empty() || st.top() != '[') {
+                    if (st.empty() || st.top() != pair[c]) {
                         return false;
                     }
                     st.pop();
