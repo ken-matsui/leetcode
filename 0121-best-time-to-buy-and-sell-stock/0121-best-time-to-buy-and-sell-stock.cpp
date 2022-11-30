@@ -3,9 +3,9 @@ public:
     int maxProfit(vector<int>& prices) {
         const int size = prices.size();
 
+        int curPrice = prices[0];
         int profit = 0;
-        int curPrice = 100000;
-        for (int i = 0; i < size; ++i) {
+        for (int i = 1; i < size; ++i) {
             if (prices[i] < curPrice) {
                 curPrice = prices[i];
             }
