@@ -11,24 +11,20 @@ public:
     bool hasCycle(ListNode *head) {
         if (!head) {
             return false;
+        } else if (!head->next) {
+            return false;
         }
         
         ListNode* slow = head;
         ListNode* fast = head;
-        
-        // cycle detection
-        do {
-            slow = slow->next; // once
-            if (!fast->next) {
-                return false; // reached to null, no cycle
-            }
-            fast = fast->next->next; // twice
-        } while (slow != fast && slow && fast);
+        while (slow && fast && fast->next) {
+            slow = slow->next;
+            fast = fast->next->next;
 
-        if (!slow || !fast) {
-            // reached to null, no cycle
-            return false;
+            if (slow == fast) {
+                return true;
+            }
         }
-        return true;
+        return false;
     }
 };
