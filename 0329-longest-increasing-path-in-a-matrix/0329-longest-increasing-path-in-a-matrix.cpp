@@ -8,32 +8,28 @@ class Solution {
         }
 
         int maxLen = 1;
-        
-        // right
+
         {
             const int newX = x + 1;
-            if (newX >= 0 && newX < m && y >= 0 && y < n && matrix[newX][y] > matrix[x][y]) {
+            if (newX >= 0 && newX < m && matrix[newX][y] > matrix[x][y]) {
                 maxLen = max(maxLen, 1 + dfs(matrix, newX, y));
             }
         }
-        // left
         {
             const int newX = x - 1;
-            if (newX >= 0 && newX < m && y >= 0 && y < n && matrix[newX][y] > matrix[x][y]) {
+            if (newX >= 0 && newX < m && matrix[newX][y] > matrix[x][y]) {
                 maxLen = max(maxLen, 1 + dfs(matrix, newX, y));
             }
         }
-        // down
         {
             const int newY = y + 1;
-            if (x >= 0 && x < m && newY >= 0 && newY < n && matrix[x][newY] > matrix[x][y]) {
+            if (newY >= 0 && newY < n && matrix[x][newY] > matrix[x][y]) {
                 maxLen = max(maxLen, 1 + dfs(matrix, x, newY));
             }
         }
-        // up
         {
             const int newY = y - 1;
-            if (x >= 0 && x < m && newY >= 0 && newY < n && matrix[x][newY] > matrix[x][y]) {
+            if (newY >= 0 && newY < n && matrix[x][newY] > matrix[x][y]) {
                 maxLen = max(maxLen, 1 + dfs(matrix, x, newY));
             }
         }
