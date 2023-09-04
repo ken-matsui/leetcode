@@ -34,9 +34,8 @@ public:
                     break;
             }
         }
-        
+
         if (!cur.empty()) {
-            cout << cur << endl;
             if (find(banned.begin(), banned.end(), cur) == banned.end()) {
                 // not banned
                 freq[cur]++;
