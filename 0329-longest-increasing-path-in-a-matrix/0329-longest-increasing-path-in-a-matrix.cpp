@@ -8,14 +8,33 @@ class Solution {
         }
 
         int maxLen = 1;
-        constexpr int directions[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-
-        for (int i = 0; i < 4; ++i) {
-            int newX = x + directions[i][0];
-            int newY = y + directions[i][1];
-
-            if (newX >= 0 && newX < m && newY >= 0 && newY < n && matrix[newX][newY] > matrix[x][y]) {
-                maxLen = max(maxLen, 1 + dfs(matrix, newX, newY));
+        
+        // right
+        {
+            const int newX = x + 1;
+            if (newX >= 0 && newX < m && y >= 0 && y < n && matrix[newX][y] > matrix[x][y]) {
+                maxLen = max(maxLen, 1 + dfs(matrix, newX, y));
+            }
+        }
+        // left
+        {
+            const int newX = x - 1;
+            if (newX >= 0 && newX < m && y >= 0 && y < n && matrix[newX][y] > matrix[x][y]) {
+                maxLen = max(maxLen, 1 + dfs(matrix, newX, y));
+            }
+        }
+        // down
+        {
+            const int newY = y + 1;
+            if (x >= 0 && x < m && newY >= 0 && newY < n && matrix[x][newY] > matrix[x][y]) {
+                maxLen = max(maxLen, 1 + dfs(matrix, x, newY));
+            }
+        }
+        // up
+        {
+            const int newY = y - 1;
+            if (x >= 0 && x < m && newY >= 0 && newY < n && matrix[x][newY] > matrix[x][y]) {
+                maxLen = max(maxLen, 1 + dfs(matrix, x, newY));
             }
         }
 
