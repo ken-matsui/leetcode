@@ -1,40 +1,39 @@
 class Solution {
     int m, n;
     vector<vector<int>> dp;
-
-    int dfs(const vector<vector<int>>& matrix, const int x, const int y) {
-        if (dp[x][y] != 0) {
-            return dp[x][y];
+    
+    int dfs(const vector<vector<int>>& matrix, const int i, const int j) {
+        if (dp[i][j] != 0) {
+            return dp[i][j];
         }
-
+        
         int maxLen = 1;
-
-        {
-            const int newX = x + 1;
-            if (newX >= 0 && newX < m && matrix[newX][y] > matrix[x][y]) {
-                maxLen = max(maxLen, 1 + dfs(matrix, newX, y));
-            }
+        
+        const int right = j + 1;
+        // check boundary & increasing?
+        if (right < n && matrix[i][right] > matrix[i][j]) {
+            maxLen = max(maxLen, 1 + dfs(matrix, i, right));
         }
-        {
-            const int newX = x - 1;
-            if (newX >= 0 && newX < m && matrix[newX][y] > matrix[x][y]) {
-                maxLen = max(maxLen, 1 + dfs(matrix, newX, y));
-            }
-        }
-        {
-            const int newY = y + 1;
-            if (newY >= 0 && newY < n && matrix[x][newY] > matrix[x][y]) {
-                maxLen = max(maxLen, 1 + dfs(matrix, x, newY));
-            }
-        }
-        {
-            const int newY = y - 1;
-            if (newY >= 0 && newY < n && matrix[x][newY] > matrix[x][y]) {
-                maxLen = max(maxLen, 1 + dfs(matrix, x, newY));
-            }
+        
+        const int left = j - 1;
+        // check boundary & increasing?
+        if (left >= 0 && matrix[i][left] > matrix[i][j]) {
+            maxLen = max(maxLen, 1 + dfs(matrix, i, left));
         }
 
-        dp[x][y] = maxLen; // memoize
+        const int up = i + 1;
+        // check boundary & increasing?
+        if (up < m && matrix[up][j] > matrix[i][j]) {
+            maxLen = max(maxLen, 1 + dfs(matrix, up, j));
+        }
+
+        const int down = i - 1;
+        // check boundary & increasing?
+        if (down >= 0 && matrix[down][j] > matrix[i][j]) {
+            maxLen = max(maxLen, 1 + dfs(matrix, down, j));
+        }
+
+        dp[i][j] = maxLen; // memo
         return maxLen;
     }
 
@@ -42,16 +41,14 @@ public:
     int longestIncreasingPath(vector<vector<int>>& matrix) {
         m = matrix.size();
         n = matrix[0].size();
-
-        int maxLen = 0;
         dp = vector<vector<int>>(m, vector<int>(n, 0));
 
+        int maxLen = 0;
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 maxLen = max(maxLen, dfs(matrix, i, j));
             }
         }
-
         return maxLen;
     }
 };
