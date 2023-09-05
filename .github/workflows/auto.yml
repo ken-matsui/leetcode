@@ -18,6 +18,7 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install clang-format@16 poac
+          echo '/home/linuxbrew/.linuxbrew/opt/clang-format/bin' >> $GITHUB_PATH
 
       - name: Format code
         run: |
