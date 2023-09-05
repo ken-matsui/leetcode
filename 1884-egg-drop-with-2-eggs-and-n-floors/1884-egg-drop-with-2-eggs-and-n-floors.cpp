@@ -1,0 +1,18 @@
+class Solution {
+    int superEggDrop(int k, int n) {
+        vector<vector<int>> dp(n + 1, vector<int>(k + 1, 0));
+        int m = 0;
+        while (dp[m][k] < n) {
+            m += 1;
+            for (int i = 1; i <= k; ++i) {
+                dp[m][i] = dp[m - 1][i - 1] + dp[m - 1][i] + 1;
+            }
+        }
+        return m;
+    }
+    
+public:
+    int twoEggDrop(int n) {
+        return superEggDrop(2, n);
+    }
+};
