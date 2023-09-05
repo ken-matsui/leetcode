@@ -14,7 +14,7 @@ public:
         if (list1 == nullptr && list2 == nullptr) {
             return nullptr;
         }
-        
+
         ListNode* res;
         if (list1 == nullptr) {
             res = new ListNode(list2->val);

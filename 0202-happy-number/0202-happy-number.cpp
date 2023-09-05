@@ -4,7 +4,7 @@ public:
         if (n == 1) {
             return true;
         }
-        
+
         unsigned long long powed = n;
         for (int i = 0; i < 10000; ++i) {
             string s = to_string(powed);

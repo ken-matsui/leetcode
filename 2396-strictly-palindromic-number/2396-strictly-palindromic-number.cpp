@@ -15,7 +15,8 @@ public:
             }
 
             const size_t half = size / 2;
-            for (int start = 0, end = size - 1; start < half && end > half; ++start, --end) {
+            for (int start = 0, end = size - 1; start < half && end > half;
+                 ++start, --end) {
                 if (conv[start] != conv[end]) {
                     return false;
                 }

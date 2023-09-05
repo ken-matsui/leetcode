@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         bool carry = false;
-        
+
         int sum = l1->val + l2->val;
         if (sum >= 10) {
             carry = true;

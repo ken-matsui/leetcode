@@ -1,20 +1,20 @@
 class Solution {
     int m, n;
     vector<vector<int>> dp;
-    
+
     int dfs(const vector<vector<int>>& matrix, const int i, const int j) {
         if (dp[i][j] != 0) {
             return dp[i][j];
         }
-        
+
         int maxLen = 1;
-        
+
         const int right = j + 1;
         // check boundary & increasing?
         if (right < n && matrix[i][right] > matrix[i][j]) {
             maxLen = max(maxLen, 1 + dfs(matrix, i, right));
         }
-        
+
         const int left = j - 1;
         // check boundary & increasing?
         if (left >= 0 && matrix[i][left] > matrix[i][j]) {

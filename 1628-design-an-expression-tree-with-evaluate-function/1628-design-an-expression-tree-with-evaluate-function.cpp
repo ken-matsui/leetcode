@@ -5,7 +5,7 @@
 
 class Node {
 public:
-    virtual ~Node () {};
+    virtual ~Node(){};
     virtual int evaluate() const = 0;
 
 protected:
@@ -16,7 +16,7 @@ protected:
 
 class ValueNode : public Node {
 public:
-    ValueNode(int val) : val(val) {};
+    ValueNode(int val) : val(val){};
 
     int evaluate() const {
         return val;
@@ -36,24 +36,23 @@ public:
 
     int evaluate() const {
         switch (op) {
-            case '+':
-                return lhs->evaluate() + rhs->evaluate();
-            case '-':
-                return lhs->evaluate() - rhs->evaluate();
-            case '*':
-                return lhs->evaluate() * rhs->evaluate();
-            case '/':
-                return lhs->evaluate() / rhs->evaluate();
-            default:
-                throw -1;
+        case '+':
+            return lhs->evaluate() + rhs->evaluate();
+        case '-':
+            return lhs->evaluate() - rhs->evaluate();
+        case '*':
+            return lhs->evaluate() * rhs->evaluate();
+        case '/':
+            return lhs->evaluate() / rhs->evaluate();
+        default:
+            throw -1;
         }
     }
 };
 
-
 /**
  * This is the TreeBuilder class.
- * You can treat it as the driver code that takes the postinfix input 
+ * You can treat it as the driver code that takes the postinfix input
  * and returns the expression tree represnting it as a Node.
  */
 
@@ -77,7 +76,6 @@ public:
         return st.top();
     }
 };
-
 
 /**
  * Your TreeBuilder object will be instantiated and called as such:

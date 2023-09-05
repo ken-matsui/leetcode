@@ -10,13 +10,10 @@ public:
     }
 
     string longestCommonPrefix(vector<string>& strs) {
-        const string min_str =
-            *min_element(
-                strs.begin(), strs.end(), 
-                [] (const string& s1, const string& s2) { 
-                    return s1.length() < s2.length();
-                }
-            );
+        const string min_str = *min_element(
+            strs.begin(), strs.end(), [](const string& s1, const string& s2) {
+                return s1.length() < s2.length();
+            });
         const size_t min_size = min_str.size();
 
         for (int i = 0; i < min_size; ++i) {

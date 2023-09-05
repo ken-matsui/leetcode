@@ -20,12 +20,12 @@ public:
         if (size == 1) {
             return nullptr;
         }
-        
+
         tmp = head;
-        for (int i = 0; i < size/2 - 1; ++i) {
+        for (int i = 0; i < size / 2 - 1; ++i) {
             tmp = tmp->next;
         }
-        
+
         tmp->next = tmp->next->next;
         return head;
     }

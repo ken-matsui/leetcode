@@ -13,7 +13,7 @@ public:
             if (count > max_count) {
                 max_count = count;
             }
-            
+
             if (cur != '(' && cur != ')') {
                 continue;
             }

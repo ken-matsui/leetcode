@@ -1,6 +1,6 @@
 class Solution {
     vector<string> banned;
-    
+
     bool isNotBanned(const string& str) {
         return find(banned.begin(), banned.end(), str) == banned.end();
     }
@@ -15,26 +15,26 @@ public:
         string maxWord;
         for (int i = 0; i < paragraph.size(); ++i) {
             switch (paragraph[i]) {
-                default:
-                    cur += tolower(paragraph[i]);
-                    break;
-                case ' ':
-                case '!':
-                case '?':
-                case '\'':
-                case ',':
-                case ';':
-                case '.': {
-                    if (!cur.empty() && isNotBanned(cur)) {
-                        freq[cur]++;
-                        if (freq[cur] > maxFreq) {
-                            maxFreq = freq[cur];
-                            maxWord = cur;
-                        }
+            default:
+                cur += tolower(paragraph[i]);
+                break;
+            case ' ':
+            case '!':
+            case '?':
+            case '\'':
+            case ',':
+            case ';':
+            case '.': {
+                if (!cur.empty() && isNotBanned(cur)) {
+                    freq[cur]++;
+                    if (freq[cur] > maxFreq) {
+                        maxFreq = freq[cur];
+                        maxWord = cur;
                     }
-                    cur = ""; // reset
-                    break;
                 }
+                cur = ""; // reset
+                break;
+            }
             }
         }
 

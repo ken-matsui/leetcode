@@ -7,7 +7,7 @@ public:
         const size_t size = groupSizes.size();
         for (int i = 0; i < size; ++i) {
             cache[groupSizes[i]].emplace_back(i);
-            
+
             if (cache[groupSizes[i]].size() == groupSizes[i]) {
                 output.emplace_back(cache[groupSizes[i]]);
                 cache[groupSizes[i]] = {};

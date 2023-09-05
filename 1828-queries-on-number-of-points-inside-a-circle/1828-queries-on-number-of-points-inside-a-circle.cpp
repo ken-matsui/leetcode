@@ -4,7 +4,8 @@ public:
         return ceil(sqrt(pow(px - cx, 2) + pow(py - cy, 2)));
     }
 
-    vector<int> countPoints(vector<vector<int>>& points, vector<vector<int>>& queries) {
+    vector<int> countPoints(vector<vector<int>>& points,
+                            vector<vector<int>>& queries) {
         vector<int> output;
         for (const auto& q : queries) {
             const int cx = q[0];

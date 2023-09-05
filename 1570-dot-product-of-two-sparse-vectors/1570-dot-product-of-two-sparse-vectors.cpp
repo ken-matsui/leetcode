@@ -1,8 +1,9 @@
 class SparseVector {
 public:
     vector<int> v;
-    
-    SparseVector(vector<int> &nums) : v(nums) {} 
+
+    SparseVector(vector<int>& nums) : v(nums) {
+    }
 
     // Return the dotProduct of two sparse vectors
     int dotProduct(SparseVector& vec) {

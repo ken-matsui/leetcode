@@ -2,7 +2,7 @@ class MyCircularQueue {
     int capacity;
     int size = 0;
     list<int> queue;
-    
+
 public:
     MyCircularQueue(int k) {
         capacity = k;
@@ -25,14 +25,14 @@ public:
         --size;
         return true;
     }
-    
+
     int Front() {
         if (isEmpty()) {
             return -1;
         }
         return *queue.begin();
     }
-    
+
     int Rear() {
         if (isEmpty()) {
             return -1;

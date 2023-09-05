@@ -27,7 +27,8 @@ class WordDictionary {
     }
 
 public:
-    WordDictionary() {}
+    WordDictionary() {
+    }
 
     void addWord(string word) {
         Node* root = overallRoot;

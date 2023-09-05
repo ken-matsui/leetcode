@@ -3,9 +3,9 @@ class Trie {
         bool isTerm = false;
         Node* children[26];
     };
-    
+
     Node* overallRoot;
-    
+
     Node* get(string word) {
         Node* root = overallRoot;
         for (char c : word) {

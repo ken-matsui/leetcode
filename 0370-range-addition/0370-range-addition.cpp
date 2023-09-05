@@ -8,13 +8,13 @@ public:
             const int val = u[2];
 
             arr[start] += val;
-            
+
             if (end < length - 1) {
                 arr[end + 1] -= val;
             }
         }
 
-        for(int i = 1; i < length; i++) {
+        for (int i = 1; i < length; i++) {
             arr[i] += arr[i - 1];
         }
         return arr;

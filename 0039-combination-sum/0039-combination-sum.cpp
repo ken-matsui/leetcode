@@ -4,7 +4,8 @@ class Solution {
     vector<int> tmp;
 
 public:
-    void backtrack(const vector<int>& candidates, const int start, const int target) {
+    void backtrack(const vector<int>& candidates, const int start,
+                   const int target) {
         if (target == 0) {
             out.emplace_back(tmp);
         } else if (target > 0) {

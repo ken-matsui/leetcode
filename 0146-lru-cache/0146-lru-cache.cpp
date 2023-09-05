@@ -4,8 +4,9 @@ class LRUCache {
     unordered_map<int, decltype(cache)::iterator> dic;
 
 public:
-    LRUCache(int capacity) : capacity(capacity) {}
-    
+    LRUCache(int capacity) : capacity(capacity) {
+    }
+
     int get(int key) {
         const auto itr = dic.find(key);
         if (itr == dic.end()) {

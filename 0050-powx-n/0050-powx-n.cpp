@@ -5,7 +5,7 @@ public:
             return 1;
         }
 
-        if (n < 0) { 
+        if (n < 0) {
             n = abs(n);
             x = 1 / x;
         }

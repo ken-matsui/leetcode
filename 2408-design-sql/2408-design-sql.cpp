@@ -2,7 +2,8 @@ class SQL {
 public:
     unordered_map<string, vector<vector<string>>> data;
 
-    SQL(vector<string>& names, vector<int>& columns) {}
+    SQL(vector<string>& names, vector<int>& columns) {
+    }
 
     void insertRow(string name, vector<string> row) {
         data[name].emplace_back(row);

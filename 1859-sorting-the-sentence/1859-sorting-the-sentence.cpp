@@ -1,9 +1,9 @@
 class Solution {
 public:
     string sortSentence(string s) {
-        vector<string> sv{ "" };
+        vector<string> sv{""};
         vector<int> iv{};
-        
+
         int i = 0;
         for (const char c : s) {
             if (isdigit(c)) { // containing no more than 9 words

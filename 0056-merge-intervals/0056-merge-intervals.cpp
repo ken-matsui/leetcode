@@ -11,12 +11,14 @@ public:
     }
 
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        sort(intervals.begin(), intervals.end(), [](auto& a, auto& b){ return a[0] < b[0]; });
+        sort(intervals.begin(), intervals.end(),
+             [](auto& a, auto& b) { return a[0] < b[0]; });
 
         isize = intervals.size();
         vector<vector<int>> output;
         for (int i = 0; i < isize; ++i) {
-            output.push_back({intervals[i][0], findEnd(intervals, i, intervals[i][1])});
+            output.push_back(
+                {intervals[i][0], findEnd(intervals, i, intervals[i][1])});
         }
         return output;
     }

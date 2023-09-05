@@ -6,7 +6,7 @@ public:
         } else if (haystack.empty()) {
             return -1;
         }
-        
+
         auto found = haystack.find(needle);
         if (found == string::npos) {
             return -1;

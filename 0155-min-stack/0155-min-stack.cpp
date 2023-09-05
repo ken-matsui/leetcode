@@ -2,7 +2,8 @@ class MinStack {
 public:
     vector<int> v;
 
-    MinStack() : v{} {}
+    MinStack() : v{} {
+    }
 
     void push(int val) {
         v.push_back(val);

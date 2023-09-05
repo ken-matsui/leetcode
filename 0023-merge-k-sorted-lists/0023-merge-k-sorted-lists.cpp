@@ -11,7 +11,7 @@
 class Solution {
     ListNode* popMin(vector<ListNode*>& lists) {
         int i = 0;
-        
+
         int minIdx = i;
         while (!lists[i] && i < lists.size()) {
             ++i;
@@ -23,7 +23,7 @@ class Solution {
                 minIdx = i;
             }
         }
-        
+
         ListNode* minNode = lists[minIdx];
         if (lists[minIdx]) {
             lists[minIdx] = lists[minIdx]->next;
@@ -40,10 +40,9 @@ public:
 
         ListNode* res = new ListNode(0);
         ListNode* tmp = res;
-        
-        while (any_of(lists.cbegin(), lists.cend(), [](ListNode* node) {
-            return node != nullptr;
-        })) {
+
+        while (any_of(lists.cbegin(), lists.cend(),
+                      [](ListNode* node) { return node != nullptr; })) {
             ListNode* minNode = popMin(lists);
             if (!minNode) {
                 break;

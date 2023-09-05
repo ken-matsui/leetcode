@@ -9,7 +9,7 @@ public:
         vector<int> output;
         for (const int q : queries) {
             output.emplace_back(pos[q]);
-            
+
             for (auto& [k, v] : pos) {
                 if (v < pos[q]) {
                     ++v;

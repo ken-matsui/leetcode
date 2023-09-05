@@ -6,12 +6,14 @@
  *     TreeNode *right;
  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+ * right(right) {}
  * };
  */
 class Solution {
 public:
-    void calcSumBST(const TreeNode const* root, const int& low, const int& high, int& sum) {
+    void calcSumBST(const TreeNode const* root, const int& low, const int& high,
+                    int& sum) {
         if (root == nullptr) {
             return;
         }

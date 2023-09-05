@@ -1,7 +1,7 @@
 class Solution {
     size_t rs;
     size_t cs;
-    
+
 public:
     void findIsland(vector<vector<char>>& grid, const int r, const int c) {
         grid[r][c] = '0'; // disable this island;

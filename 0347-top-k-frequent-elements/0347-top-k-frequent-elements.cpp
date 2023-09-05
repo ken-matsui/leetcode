@@ -10,7 +10,7 @@ public:
         for (const auto& [n, freq] : m) {
             pq.emplace(freq, n);
         }
- 
+
         vector<int> res;
         while (k--) {
             res.emplace_back(pq.top().second);

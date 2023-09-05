@@ -7,12 +7,12 @@ public:
 
         for (const int num : nums) {
             // only find the minimum streak start to make it O(n)
-            if (set.find(num-1) == set.cend()) {
+            if (set.find(num - 1) == set.cend()) {
                 int curNum = num;
                 int current = 1;
-                
+
                 // calc consecutive
-                while (set.find(curNum+1) != set.cend()) {
+                while (set.find(curNum + 1) != set.cend()) {
                     ++curNum;
                     ++current;
                 }

@@ -2,7 +2,7 @@ class Solution {
 public:
     int balancedStringSplit(string s) {
         const size_t size = s.size();
-        
+
         char cur = s[0];
         int count = 1;
         int output = 0;

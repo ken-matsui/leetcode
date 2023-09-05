@@ -1,6 +1,7 @@
 class Solution {
 public:
-    void calcMinites(int& minites, const int i, int& carPlace, const int cnt, const vector<int>& travel) {
+    void calcMinites(int& minites, const int i, int& carPlace, const int cnt,
+                     const vector<int>& travel) {
         if (cnt > 0) { // if found
             minites += cnt;
             // if not the first place, need to calc travel

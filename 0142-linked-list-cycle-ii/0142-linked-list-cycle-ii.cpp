@@ -8,14 +8,14 @@
  */
 class Solution {
 public:
-    ListNode *detectCycle(ListNode *head) {
+    ListNode* detectCycle(ListNode* head) {
         if (!head) {
             return nullptr;
         }
 
         ListNode* slow = head; // once
         ListNode* fast = head; // twice
-        
+
         // cycle detection algo
         do {
             slow = slow->next;
@@ -29,7 +29,7 @@ public:
         if (!slow || !fast) {
             return nullptr;
         }
-        
+
         // cycle detection pos
         slow = head;
         while (slow != fast) {

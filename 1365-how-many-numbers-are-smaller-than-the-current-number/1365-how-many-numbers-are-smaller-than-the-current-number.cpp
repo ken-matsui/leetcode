@@ -9,10 +9,8 @@ public:
         for (int i = 0; i < size; ++i) {
             const int value = nums[i];
 
-            ans[i] = std::count_if(
-                first, last,
-                [&value](const int x){ return x < value; }
-            );
+            ans[i] = std::count_if(first, last,
+                                   [&value](const int x) { return x < value; });
         }
         return ans;
     }

@@ -4,7 +4,7 @@ public:
         if (strs.size() == 1) {
             return {strs};
         }
-        
+
         sort(strs.begin(), strs.end());
         const vector<string> cpy(strs.begin(), strs.end());
         for (auto& s : strs) {

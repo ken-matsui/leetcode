@@ -10,7 +10,7 @@ public:
         int horiz = -1;
 
         int direc = 1;
-        while (m*n > 0) {
+        while (m * n > 0) {
             // move horizontally
             for (int i = 0; i < n; ++i) {
                 horiz += direc;

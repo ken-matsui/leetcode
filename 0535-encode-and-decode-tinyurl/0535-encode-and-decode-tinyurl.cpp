@@ -1,6 +1,7 @@
 class Solution {
 public:
-    string str = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    string str =
+        "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     unordered_map<string, string> m;
 
     random_device rd;

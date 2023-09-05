@@ -29,7 +29,7 @@ class Solution {
         }
         return prev;
     }
-    
+
     ListNode* middleNode(ListNode* head) {
         int size = 0;
         ListNode* tmp = head;
@@ -37,8 +37,8 @@ class Solution {
             tmp = tmp->next;
             ++size;
         }
-        
-        for (int i = 0; i < size/2; ++i) {
+
+        for (int i = 0; i < size / 2; ++i) {
             head = head->next;
         }
         return head;
@@ -49,7 +49,7 @@ public:
         if (!head->next || !head->next->next) {
             return;
         }
-        
+
         ListNode* halfBack = reverseList(middleNode(head));
         // print(halfBack);
         // print(head);

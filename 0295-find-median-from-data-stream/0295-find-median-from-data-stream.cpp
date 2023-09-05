@@ -1,6 +1,5 @@
 class MedianFinder {
-    template <typename T>
-    using MaxHeap = priority_queue<T>;
+    template <typename T> using MaxHeap = priority_queue<T>;
     template <typename T>
     using MinHeap = priority_queue<T, vector<T>, greater<T>>;
 
@@ -8,7 +7,8 @@ class MedianFinder {
     MinHeap<int> right;
 
 public:
-    MedianFinder() {}
+    MedianFinder() {
+    }
 
     void addNum(int num) {
         // Insert

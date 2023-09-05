@@ -4,11 +4,11 @@ public:
         unordered_map<int, int> left;
         unordered_map<int, int> right;
         unordered_map<int, int> freq;
-        
+
         int maxFreq = 0;
         for (int i = 0; i < nums.size(); ++i) {
             const int n = nums[i];
-            
+
             if (left.find(n) == left.end()) {
                 left[n] = i;
             }

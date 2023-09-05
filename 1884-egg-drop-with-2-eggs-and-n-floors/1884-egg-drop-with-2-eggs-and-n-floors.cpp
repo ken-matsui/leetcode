@@ -10,7 +10,7 @@ class Solution {
         }
         return m;
     }
-    
+
 public:
     int twoEggDrop(int n) {
         return superEggDrop(2, n);
