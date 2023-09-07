@@ -3,9 +3,9 @@ public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         const int m = matrix.size();
         const int n = matrix[0].size();
-        
+
         int lo = 0;
-        int hi = m-1;
+        int hi = m - 1;
         while (lo <= hi) {
             int mi = lo + (hi - lo) / 2;
 
@@ -19,10 +19,11 @@ public:
         }
 
         const int i = hi;
-        if (i < 0) return false;
+        if (i < 0)
+            return false;
 
         lo = 0;
-        hi = n-1;
+        hi = n - 1;
         while (lo <= hi) {
             int mi = lo + (hi - lo) / 2;
 
