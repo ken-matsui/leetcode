@@ -1,6 +1,9 @@
 name: Auto
 
-on: push
+on:
+  push:
+    paths:
+      - '**.cpp'
 
 jobs:
   format:
