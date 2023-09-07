@@ -8,7 +8,7 @@ public:
                 ++lastNonZero;
             }
         }
-        
+
         for (int i = lastNonZero; i < nums.size(); ++i) {
             nums[i] = 0;
         }
