@@ -5,7 +5,7 @@ public:
         for (int i = 0; i < keyboard.size(); ++i) {
             keys[keyboard[i]] = i;
         }
-        
+
         int pos = 0;
         int ans = 0;
         for (const char w : word) {
