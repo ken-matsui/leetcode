@@ -1,4 +1,4 @@
-name: Auto
+name: C++
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - '**.cpp'
 
 jobs:
-  format:
+  auto-format:
     runs-on: ubuntu-latest
 
     permissions:
