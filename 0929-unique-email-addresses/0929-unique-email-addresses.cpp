@@ -2,7 +2,7 @@ class Solution {
 public:
     int numUniqueEmails(vector<string>& emails) {
         unordered_set<string> set;
-        
+
         for (const string& email : emails) {
             string parsed;
             bool plus = false;
