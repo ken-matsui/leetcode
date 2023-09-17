@@ -29,7 +29,7 @@ jobs:
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           poac --verbose fmt
 
-      - name: Removed Poac Manifest File
+      - name: Remove Poac Manifest File
         run: rm poac.toml
 
       # Commit all changed files back to the repository
