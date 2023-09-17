@@ -11,13 +11,13 @@ public:
                 return {-1, -1};
             }
         }
-        
+
         int lo = 0;
         int hi = nums.size() - 1;
         int mi = -1;
         while (lo <= hi) {
             mi = lo + (hi - lo) / 2;
-            
+
             if (nums[mi] == target) {
                 break;
             } else if (nums[mi] < target) {
@@ -26,7 +26,7 @@ public:
                 hi = mi - 1;
             }
         }
-        
+
         // not found
         if (mi == -1 || lo > hi) {
             return {-1, -1};
@@ -35,10 +35,10 @@ public:
         // find range
         int start = mi;
         int end = mi;
-        while (start > 0 && nums[start-1] == target) {
+        while (start > 0 && nums[start - 1] == target) {
             --start;
         }
-        while (end < nums.size() - 1 && nums[end+1] == target) {
+        while (end < nums.size() - 1 && nums[end + 1] == target) {
             ++end;
         }
         return {start, end};
