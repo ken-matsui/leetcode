@@ -1,14 +1,15 @@
 class Solution {
     int m;
     int n;
-    
-    void dfs(vector<vector<int>>& grid1, vector<vector<int>>& grid2, const int i, const int j, bool& isSubIsland) {
+
+    void dfs(vector<vector<int>>& grid1, vector<vector<int>>& grid2,
+             const int i, const int j, bool& isSubIsland) {
         grid2[i][j] = 0; // mark as visited
 
         if (grid1[i][j] != 1) {
             isSubIsland = false;
         }
-        
+
         // bottom
         if (i + 1 < m && grid2[i + 1][j] == 1) {
             dfs(grid1, grid2, i + 1, j, isSubIsland);
@@ -28,7 +29,8 @@ class Solution {
     }
 
 public:
-    int countSubIslands(vector<vector<int>>& grid1, vector<vector<int>>& grid2) {
+    int countSubIslands(vector<vector<int>>& grid1,
+                        vector<vector<int>>& grid2) {
         m = grid1.size();
         n = grid1[0].size();
 
