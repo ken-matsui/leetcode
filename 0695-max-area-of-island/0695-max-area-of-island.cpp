@@ -1,8 +1,9 @@
 class Solution {
-    void dfs(vector<vector<int>>& grid, const int i, const int j, int& curArea) {
+    void dfs(vector<vector<int>>& grid, const int i, const int j,
+             int& curArea) {
         grid[i][j] = 0; // mark as visited
         ++curArea;
-        
+
         // bottom
         if (i + 1 < m && grid[i + 1][j] == 1) {
             dfs(grid, i + 1, j, curArea);
@@ -23,7 +24,7 @@ class Solution {
 
     int m;
     int n;
-    
+
 public:
     int maxAreaOfIsland(vector<vector<int>>& grid) {
         m = grid.size();
