@@ -25,8 +25,12 @@ jobs:
 
       - name: Format code
         run: |
+          poac init
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           poac --verbose fmt
+
+      - name: Removed Poac Manifest File
+        run: rm poac.toml
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v4
