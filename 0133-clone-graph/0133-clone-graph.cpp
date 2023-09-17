@@ -24,7 +24,7 @@ class Solution {
         if (cloned.find(node) != cloned.end()) {
             return cloned[node];
         }
-        
+
         Node* newNode = new Node(node->val);
         cloned[node] = newNode;
         vector<Node*> neighbors;
@@ -34,13 +34,13 @@ class Solution {
         newNode->neighbors = neighbors;
         return newNode;
     }
-    
+
 public:
     Node* cloneGraph(Node* node) {
         if (!node) {
             return nullptr;
         }
-        
+
         // original -> cloned
         unordered_map<Node*, Node*> cloned;
         return dfs(node, cloned);
