@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> addToArrayForm(vector<int>& num, int k) {
         vector<int> res;
-        
+
         int i = num.size();
         while (--i >= 0 || k > 0) {
             if (i >= 0) {
