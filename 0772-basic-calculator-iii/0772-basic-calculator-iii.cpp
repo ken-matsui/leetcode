@@ -2,7 +2,7 @@ class Solution {
     // infix -> postfix
     string shuntingYard(const string& s) {
         string out;
-        
+
         stack<char> ops;
         char prev = ' '; // for unary minus
         for (int i = 0; i < s.size(); ++i) {
@@ -18,11 +18,13 @@ class Solution {
                 out += ' '; // delimiter
                 --i;
             } else if (c == '+' || c == '-') {
-                if (c == '-' && (i == 0 || prev == '(' || prev == '+' || prev == '-' || prev == '*' || prev == '/')) {
+                if (c == '-' && (i == 0 || prev == '(' || prev == '+' ||
+                                 prev == '-' || prev == '*' || prev == '/')) {
                     // handle unary minus
                     out += "0 "; // add zero before the unary minus
                 }
-                while (!ops.empty() && (ops.top() == '+' || ops.top() == '-' || ops.top() == '*' || ops.top() == '/')) {
+                while (!ops.empty() && (ops.top() == '+' || ops.top() == '-' ||
+                                        ops.top() == '*' || ops.top() == '/')) {
                     out += ops.top();
                     out += " "; // delimiter for postfix
                     ops.pop();
@@ -43,7 +45,7 @@ class Solution {
                     out += " "; // delimiter for postfix
                     ops.pop();
                 }
-                ops.pop();  // pop '('
+                ops.pop(); // pop '('
             }
             prev = c;
         }
@@ -61,7 +63,7 @@ class Solution {
 
         for (int i = 0; i < s.size(); ++i) {
             const char c = s[i];
-            
+
             if (isdigit(c)) {
                 string n;
                 while (i < s.size() && s[i] != ' ') {
@@ -70,28 +72,30 @@ class Solution {
                 }
                 st.push(stoi(n));
             } else if (c != ' ') {
-                int b = st.top(); st.pop();
-                int a = st.top(); st.pop();
+                int b = st.top();
+                st.pop();
+                int a = st.top();
+                st.pop();
 
                 switch (c) {
-                    case '+':
-                        st.push(a + b);
-                        break;
-                    case '-':
-                        st.push(a - b);
-                        break;
-                    case '*':
-                        st.push(a * b);
-                        break;
-                    case '/':
-                        st.push(a / b);
-                        break;
+                case '+':
+                    st.push(a + b);
+                    break;
+                case '-':
+                    st.push(a - b);
+                    break;
+                case '*':
+                    st.push(a * b);
+                    break;
+                case '/':
+                    st.push(a / b);
+                    break;
                 }
             }
         }
         return st.top();
     }
-    
+
 public:
     int calculate(string s) {
         const string postfix = shuntingYard(s);
