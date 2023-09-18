@@ -19,7 +19,7 @@ public:
         const int n = graph.size();
         vector<int> state(n, 0); // 0: unvisited, 1: visited, 2: safe
         vector<int> res;
-        
+
         for (int i = 0; i < n; ++i) {
             if (dfs(i, graph, state)) {
                 res.push_back(i);
