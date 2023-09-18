@@ -16,18 +16,18 @@ public:
             int left = leftLo + (leftHi - leftLo) / 2;
             int right = half - left;
 
-            if (left < m && nums1[left] < nums2[right-1]) {
+            if (left < m && nums1[left] < nums2[right - 1]) {
                 leftLo = left + 1;
-            } else if (left > 0 && nums1[left-1] > nums2[right]) {
+            } else if (left > 0 && nums1[left - 1] > nums2[right]) {
                 leftHi = left - 1;
             } else {
                 int leftMax;
                 if (left == 0) {
-                    leftMax = nums2[right-1];
+                    leftMax = nums2[right - 1];
                 } else if (right == 0) {
-                    leftMax = nums1[left-1];
+                    leftMax = nums1[left - 1];
                 } else {
-                    leftMax = max(nums1[left-1], nums2[right-1]);
+                    leftMax = max(nums1[left - 1], nums2[right - 1]);
                 }
 
                 if ((m + n) % 2 == 1) {
