@@ -1,6 +1,6 @@
 class Solution {
     vector<vector<optional<bool>>> dp;
-    
+
     bool dfs(const vector<int>& nums, const int n, const int subsetSum) {
         if (subsetSum == 0) {
             return true;
@@ -11,8 +11,8 @@ class Solution {
         if (dp[n][subsetSum] != nullopt) {
             return (dp[n][subsetSum] == true);
         }
-        bool res = dfs(nums, n - 1, subsetSum - nums[n - 1]) 
-            || dfs(nums, n - 1, subsetSum);
+        bool res = dfs(nums, n - 1, subsetSum - nums[n - 1]) ||
+                   dfs(nums, n - 1, subsetSum);
         dp[n][subsetSum] = res;
         return res;
     }
@@ -30,7 +30,8 @@ public:
         }
 
         const int subsetSum = sum / 2;
-        dp = vector<vector<optional<bool>>>(n + 1, vector<optional<bool>>(subsetSum + 1, nullopt));
+        dp = vector<vector<optional<bool>>>(
+            n + 1, vector<optional<bool>>(subsetSum + 1, nullopt));
         return dfs(nums, n - 1, subsetSum);
     }
 };
