@@ -1,15 +1,14 @@
 class MyStack {
     queue<int> q;
-    
+
 public:
     MyStack() {
-        
     }
-    
+
     void push(int x) {
         q.push(x);
     }
-    
+
     int pop() {
         queue<int> q2;
         int v;
@@ -27,7 +26,7 @@ public:
     int top() {
         return q.back();
     }
-    
+
     bool empty() {
         return q.empty();
     }
