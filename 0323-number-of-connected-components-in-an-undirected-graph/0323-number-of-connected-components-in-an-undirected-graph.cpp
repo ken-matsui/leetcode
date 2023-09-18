@@ -1,7 +1,7 @@
 class Solution {
     void dfs(vector<vector<int>>& adjList, vector<bool>& visited, int node) {
         visited[node] = true;
-        
+
         for (int neighbor : adjList[node]) {
             if (!visited[neighbor]) {
                 dfs(adjList, visited, neighbor);
@@ -16,7 +16,7 @@ public:
             adjList[edge[0]].push_back(edge[1]);
             adjList[edge[1]].push_back(edge[0]);
         }
-        
+
         vector<bool> visited(n, false);
         int count = 0;
         for (int i = 0; i < n; ++i) {
