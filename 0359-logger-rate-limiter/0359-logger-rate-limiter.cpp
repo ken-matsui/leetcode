@@ -1,9 +1,10 @@
 class Logger {
     unordered_map<string, int> restriction;
-    
+
 public:
-    Logger() {}
-    
+    Logger() {
+    }
+
     bool shouldPrintMessage(int timestamp, string message) {
         if (restriction.find(message) == restriction.end()) {
             restriction[message] = timestamp + 10;
