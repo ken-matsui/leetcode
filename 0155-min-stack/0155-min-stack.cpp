@@ -2,10 +2,11 @@ class MinStack {
     int minVal = INT_MAX;
     stack<int> st;
     stack<int> minSt;
-    
+
 public:
-    MinStack() {}
-    
+    MinStack() {
+    }
+
     void push(int val) {
         st.push(val);
         minVal = min(minVal, val);
@@ -21,7 +22,7 @@ public:
             minVal = INT_MAX;
         }
     }
-    
+
     int top() {
         return st.top();
     }
