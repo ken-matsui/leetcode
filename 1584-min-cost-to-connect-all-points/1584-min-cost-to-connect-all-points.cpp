@@ -10,14 +10,14 @@ class Solution {
                 parent[i] = i;
             }
         }
-        
+
         int findSet(int i) {
             if (parent[i] != i) {
                 parent[i] = findSet(parent[i]);
             }
             return parent[i];
         }
-        
+
         bool unionSet(int i, int j) {
             int pi = findSet(i);
             int pj = findSet(j);
@@ -35,21 +35,22 @@ class Solution {
             return true;
         }
     };
-    
+
 public:
     int minCostConnectPoints(vector<vector<int>>& points) {
         const int n = points.size();
         vector<pair<int, pair<int, int>>> edges;
-        
+
         for (int i = 0; i < n; ++i) {
             for (int j = i + 1; j < n; ++j) {
-                int dist = abs(points[i][0] - points[j][0]) + abs(points[i][1] - points[j][1]);
+                int dist = abs(points[i][0] - points[j][0]) +
+                           abs(points[i][1] - points[j][1]);
                 edges.push_back({dist, {i, j}});
             }
         }
-        
+
         sort(edges.begin(), edges.end());
-        
+
         UnionFind uf(n);
         int res = 0;
         for (auto& edge : edges) {
@@ -59,7 +60,7 @@ public:
                 res += edge.first;
             }
         }
-        
+
         return res;
     }
 };
