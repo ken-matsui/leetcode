@@ -2,7 +2,7 @@ class Twitter {
     struct Tweet {
         int id;
         int time;
-        
+
         bool operator<(const Tweet& other) const {
             return time < other.time;
         }
@@ -14,7 +14,8 @@ class Twitter {
     unordered_map<int, unordered_set<int>> followings;
 
 public:
-    Twitter() {}
+    Twitter() {
+    }
 
     void postTweet(int userId, int tweetId) {
         tweets[userId].push({tweetId, timestamp++});
