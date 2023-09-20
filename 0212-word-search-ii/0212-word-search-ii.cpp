@@ -7,7 +7,7 @@ class Solution {
     int m;
     int n;
     TrieNode* root = new TrieNode();
-    
+
     void insertWord(const string& word) {
         TrieNode* curr = root;
         for (char ch : word) {
@@ -19,7 +19,8 @@ class Solution {
         curr->word = word;
     }
 
-    void dfs(vector<vector<char>>& board, const int i, const int j, TrieNode* curr, vector<string>& res) {
+    void dfs(vector<vector<char>>& board, const int i, const int j,
+             TrieNode* curr, vector<string>& res) {
         if (i < 0 || j < 0 || i >= m || j >= n || board[i][j] == '/') {
             return;
         }
@@ -44,10 +45,11 @@ class Solution {
     }
 
 public:
-    vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
+    vector<string> findWords(vector<vector<char>>& board,
+                             vector<string>& words) {
         m = board.size();
         n = board[0].size();
-        
+
         for (const string& w : words) {
             insertWord(w);
         }
