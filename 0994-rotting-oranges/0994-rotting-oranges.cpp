@@ -28,7 +28,7 @@ public:
             for (int i = 0; i < size; ++i) {
                 auto [x, y] = q.front();
                 q.pop();
-                
+
                 // down
                 if (x + 1 < m && grid[x + 1][y] == 1) {
                     grid[x + 1][y] = 2; // make the orange rotten
