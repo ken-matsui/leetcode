@@ -1,5 +1,6 @@
 class Solution {
-    void backtrack(vector<int>& nums, int start, vector<int>& currentSubset, vector<vector<int>>& result) {
+    void backtrack(vector<int>& nums, int start, vector<int>& currentSubset,
+                   vector<vector<int>>& result) {
         result.push_back(currentSubset);
 
         for (int i = start; i < nums.size(); ++i) {
