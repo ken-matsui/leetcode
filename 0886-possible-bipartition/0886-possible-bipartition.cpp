@@ -13,15 +13,15 @@ public:
                 // already visited
                 continue;
             }
-            
+
             stack<int> st;
             st.push(i);
             colors[i] = 0;
-            
+
             while (!st.empty()) {
                 const int node = st.top();
                 st.pop();
-                
+
                 for (const int neighbor : adjList[node]) {
                     if (colors[neighbor] == -1) {
                         // not visited, color
