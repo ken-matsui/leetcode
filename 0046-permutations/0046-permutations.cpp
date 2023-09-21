@@ -1,5 +1,6 @@
 class Solution {
-    void backtrack(const vector<int>& nums, vector<int>& path, vector<vector<int>>& res) {
+    void backtrack(const vector<int>& nums, vector<int>& path,
+                   vector<vector<int>>& res) {
         if (path.size() == nums.size()) {
             res.push_back(path);
             return;
