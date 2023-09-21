@@ -18,19 +18,19 @@ public:
             ++size;
         }
         const int until = size / 2;
-        
+
         stack<int> st;
         node = head;
         for (int i = 0; i < until; ++i) {
             st.push(node->val);
             node = node->next;
         }
-        
+
         if (size % 2 == 1) {
             // drop center
             node = node->next;
         }
-        
+
         for (int i = 0; i < until; ++i) {
             const int val = st.top();
             st.pop();
