@@ -9,15 +9,15 @@ public:
 
         int shortestCycle = INT_MAX;
         queue<int> q;
-        for(int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i) {
             vector<int> visited(n, INT_MAX);
             vector<int> parent(n, -1);
-            
+
             visited[i] = 0;
             q.push(i);
 
             while (!q.empty()) {
-                const int src = q.front(); 
+                const int src = q.front();
                 q.pop();
 
                 for (const int neighbor : adjList[src]) {
@@ -26,11 +26,14 @@ public:
                         parent[neighbor] = src;
                         q.push(neighbor);
                     } else {
-                        if (parent[src] == neighbor || parent[neighbor] == src) {
+                        if (parent[src] == neighbor ||
+                            parent[neighbor] == src) {
                             continue;
                         }
-                        
-                        shortestCycle = min(shortestCycle, abs(visited[src] + visited[neighbor]) + 1);
+
+                        shortestCycle =
+                            min(shortestCycle,
+                                abs(visited[src] + visited[neighbor]) + 1);
                     }
                 }
             }
