@@ -4,7 +4,7 @@ public:
         if (n == 1) {
             return true;
         }
-        
+
         unordered_set<int> val;
         while (n != 1 && val.find(n) == val.end()) {
             val.insert(n);
