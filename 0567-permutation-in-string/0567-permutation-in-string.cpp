@@ -4,7 +4,7 @@ public:
         if (s1.size() > s2.size()) {
             return false;
         }
-        
+
         unordered_map<char, int> s1Freq;
         for (const char c1 : s1) {
             s1Freq[c1]++;
@@ -15,7 +15,7 @@ public:
             for (int j = 0; j < s1.size(); ++j) {
                 s2Freq[s2[i + j]]++;
             }
-            
+
             bool match = true;
             for (const auto& itr : s1Freq) {
                 if (itr.second - s2Freq[itr.first] != 0) {
