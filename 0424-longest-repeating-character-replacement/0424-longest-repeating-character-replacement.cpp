@@ -6,7 +6,7 @@ class Solution {
 public:
     int characterReplacement(string s, int k) {
         unordered_set<char> chars(s.begin(), s.end());
-        
+
         int maxLen = 0;
         for (const char c : chars) {
             int start = 0;
@@ -15,7 +15,7 @@ public:
                 if (s[end] == c) {
                     ++count;
                 }
-                
+
                 while (!isWindowValid(start, end, count, k)) {
                     if (s[start] == c) {
                         --count;
