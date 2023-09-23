@@ -1,11 +1,13 @@
 class Solution {
     const int inf = 2147483647;
-    
+
     int m;
     int n;
-    
-    void dfs(vector<vector<int>>& rooms, const int i, const int j, const int dist) {
-        if (i < 0 || i >= m || j < 0 || j >= n || rooms[i][j] == 0 || rooms[i][j] == -1 || rooms[i][j] <= dist) {
+
+    void dfs(vector<vector<int>>& rooms, const int i, const int j,
+             const int dist) {
+        if (i < 0 || i >= m || j < 0 || j >= n || rooms[i][j] == 0 ||
+            rooms[i][j] == -1 || rooms[i][j] <= dist) {
             return;
         }
 
@@ -19,7 +21,7 @@ class Solution {
         // left
         dfs(rooms, i, j - 1, dist + 1);
     }
-    
+
 public:
     void wallsAndGates(vector<vector<int>>& rooms) {
         m = rooms.size();
