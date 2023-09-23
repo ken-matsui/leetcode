@@ -18,7 +18,7 @@ public:
                 ++idx;
             }
         }
-        
+
         string res;
         for (const string& r : rows) {
             res += r;
