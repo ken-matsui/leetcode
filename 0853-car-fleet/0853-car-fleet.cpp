@@ -4,7 +4,8 @@ public:
         int n = position.size();
         vector<pair<int, double>> cars;
         for (int i = 0; i < n; ++i)
-            cars.push_back({position[i], (double)(target - position[i]) / speed[i]});
+            cars.push_back(
+                {position[i], (double)(target - position[i]) / speed[i]});
         sort(cars.begin(), cars.end());
 
         int res = 0;
