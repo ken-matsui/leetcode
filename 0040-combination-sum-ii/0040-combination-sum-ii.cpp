@@ -1,7 +1,8 @@
 class Solution {
     vector<vector<int>> res;
-    
-    void backtrack(const vector<int>& candidates, const int target, const int start, vector<int>& cur) {
+
+    void backtrack(const vector<int>& candidates, const int target,
+                   const int start, vector<int>& cur) {
         if (target < 0) {
             return;
         }
@@ -21,7 +22,7 @@ class Solution {
             cur.pop_back();
         }
     }
-    
+
 public:
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
         sort(candidates.begin(), candidates.end());
