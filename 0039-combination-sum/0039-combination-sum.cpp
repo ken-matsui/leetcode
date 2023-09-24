@@ -1,7 +1,8 @@
 class Solution {
     vector<vector<int>> res;
 
-    void backtrack(const vector<int>& candidates, const int target, const int start, vector<int>& cur) {
+    void backtrack(const vector<int>& candidates, const int target,
+                   const int start, vector<int>& cur) {
         if (target < 0) {
             return;
         }
