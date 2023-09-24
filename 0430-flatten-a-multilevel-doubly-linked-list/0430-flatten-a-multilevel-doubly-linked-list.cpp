@@ -16,14 +16,14 @@ class Solution {
         }
         cur->prev = prev;
         prev->next = cur;
-        
+
         Node* tmp = cur->next;
-        
+
         Node* tail = dfs(cur, cur->child);
         cur->child = nullptr;
         return dfs(tail, tmp);
     }
-    
+
 public:
     Node* flatten(Node* head) {
         if (!head) {
