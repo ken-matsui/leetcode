@@ -1,9 +1,9 @@
 class Solution {
     vector<vector<int>> res;
-    
+
     void backtrack(const vector<int>& nums, vector<int>& cur, const int start) {
         res.push_back(cur);
-        
+
         if (start >= nums.size()) {
             return;
         }
@@ -12,7 +12,7 @@ class Solution {
                 // skip duplicates
                 continue;
             }
-            
+
             cur.push_back(nums[i]);
             backtrack(nums, cur, i + 1);
             cur.pop_back();
