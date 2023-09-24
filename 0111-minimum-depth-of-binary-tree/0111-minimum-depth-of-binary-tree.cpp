@@ -6,7 +6,8 @@
  *     TreeNode *right;
  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+ * right(right) {}
  * };
  */
 class Solution {
@@ -15,7 +16,7 @@ public:
         if (!root) {
             return 0;
         }
-        
+
         if (!root->left) {
             return 1 + minDepth(root->right);
         } else if (!root->right) {
