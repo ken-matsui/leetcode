@@ -6,13 +6,15 @@
  *     TreeNode *right;
  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+ * right(right) {}
  * };
  */
 class Solution {
     vector<vector<int>> res;
-    
-    void preorder(TreeNode* node, vector<int> path, int sum, const int targetSum) {
+
+    void preorder(TreeNode* node, vector<int> path, int sum,
+                  const int targetSum) {
         if (!node) {
             return;
         }
