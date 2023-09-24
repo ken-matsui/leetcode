@@ -1,8 +1,9 @@
 class Solution {
     int m;
     int n;
-    
-    bool dfs(vector<vector<char>>& board, const int i, const int j, const string& word, const int idx) {
+
+    bool dfs(vector<vector<char>>& board, const int i, const int j,
+             const string& word, const int idx) {
         if (board[i][j] == '/') {
             // already seen
             return false;
@@ -38,7 +39,7 @@ class Solution {
                 return true;
             }
         }
-        
+
         board[i][j] = orig; // revert original
         return false;
     }
