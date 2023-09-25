@@ -1,6 +1,6 @@
 class Solution {
     vector<vector<string>> res;
-    
+
     bool isPalindrome(const string& s, int start, int end) {
         while (start < end) {
             if (s[start] != s[end]) {
@@ -17,7 +17,7 @@ class Solution {
             res.push_back(cur);
             return;
         }
-        
+
         for (int end = start; end < s.size(); ++end) {
             if (!isPalindrome(s, start, end)) {
                 continue;
