@@ -5,7 +5,7 @@ public:
         for (const char c : s) {
             freq[c]++;
         }
-        
+
         int oddCount = 0;
         for (const auto& [k, v] : freq) {
             if (v % 2 != 0) {
