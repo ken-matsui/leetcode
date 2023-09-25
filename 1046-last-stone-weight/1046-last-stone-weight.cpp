@@ -5,7 +5,7 @@ public:
         for (const int stone : stones) {
             buckets[stone]++;
         }
-        
+
         int biggest = 0;
         int idx = 1000;
         while (idx > 0) {
@@ -13,7 +13,7 @@ public:
                 --idx;
                 continue;
             }
-            
+
             if (biggest == 0) {
                 buckets[idx] %= 2;
                 if (buckets[idx] == 1) {
