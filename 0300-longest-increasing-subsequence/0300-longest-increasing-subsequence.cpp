@@ -9,7 +9,7 @@ public:
                 }
             }
         }
-        
+
         int maxVal = 0;
         for (const int v : dp) {
             maxVal = max(maxVal, v);
