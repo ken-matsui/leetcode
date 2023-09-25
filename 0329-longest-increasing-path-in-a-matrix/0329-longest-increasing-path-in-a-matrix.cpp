@@ -2,12 +2,12 @@ class Solution {
     int m;
     int n;
     vector<vector<int>> dp;
-    
+
     int dfs(const vector<vector<int>>& matrix, const int i, const int j) {
         if (dp[i][j] != -1) {
             return dp[i][j];
         }
-        
+
         int maxPath = 1;
         // bottom
         if (i + 1 < m && matrix[i + 1][j] > matrix[i][j]) {
