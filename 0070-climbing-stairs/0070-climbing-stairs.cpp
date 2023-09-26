@@ -6,7 +6,7 @@ public:
         } else if (n == 2) {
             return 2;
         }
-        
+
         vector<int> dp(n, 0);
         dp[0] = 1;
         dp[1] = 2;
