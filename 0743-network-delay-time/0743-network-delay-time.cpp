@@ -5,13 +5,15 @@ public:
         for (const auto& time : times) {
             graph[time[0]].emplace_back(time[1], time[2]);
         }
-        
+
         // dist, node
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>,
+                       greater<pair<int, int>>>
+            pq;
         pq.emplace(0, k);
-        
+
         unordered_map<int, int> dist;
-        
+
         while (!pq.empty()) {
             auto [d, node] = pq.top();
             pq.pop();
@@ -28,7 +30,7 @@ public:
                 }
             }
         }
-        
+
         if (dist.size() != n) {
             return -1;
         }
