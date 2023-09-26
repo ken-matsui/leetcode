@@ -1,5 +1,6 @@
 class Solution {
-    void dfs(const vector<vector<int>>& adjList, const int node, vector<bool>& visited) {
+    void dfs(const vector<vector<int>>& adjList, const int node,
+             vector<bool>& visited) {
         if (visited[node]) {
             return;
         }
@@ -8,7 +9,7 @@ class Solution {
             dfs(adjList, neighbor, visited);
         }
     }
-    
+
 public:
     int makeConnected(int n, vector<vector<int>>& connections) {
         if (connections.size() < n - 1) {
@@ -20,7 +21,7 @@ public:
             adjList[edge[0]].push_back(edge[1]);
             adjList[edge[1]].push_back(edge[0]);
         }
-        
+
         vector<bool> visited(n, false);
         int components = 0;
         for (int i = 0; i < n; ++i) {
@@ -29,7 +30,7 @@ public:
                 ++components;
             }
         }
-        
+
         return components - 1;
     }
 };
