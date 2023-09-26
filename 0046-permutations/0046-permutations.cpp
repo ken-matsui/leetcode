@@ -1,6 +1,6 @@
 class Solution {
     vector<vector<int>> res;
-    
+
     void backtrack(const vector<int>& nums, vector<int>& cur) {
         if (nums.size() == cur.size()) {
             res.push_back(cur);
