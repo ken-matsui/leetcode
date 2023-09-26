@@ -7,20 +7,20 @@ public:
             adjList[edge[1]].push_back(edge[0]);
             inDegree[edge[0]]++;
         }
-        
+
         queue<int> zeroInDegree;
         for (int i = 0; i < numCourses; ++i) {
             if (inDegree[i] == 0) {
                 zeroInDegree.push(i);
             }
         }
-        
+
         vector<int> res;
         while (!zeroInDegree.empty()) {
             const int node = zeroInDegree.front();
             zeroInDegree.pop();
             res.push_back(node);
-            
+
             for (const int neighbor : adjList[node]) {
                 inDegree[neighbor]--;
                 if (inDegree[neighbor] == 0) {
@@ -28,7 +28,7 @@ public:
                 }
             }
         }
-        
+
         if (res.size() == numCourses) {
             return res;
         } else {
