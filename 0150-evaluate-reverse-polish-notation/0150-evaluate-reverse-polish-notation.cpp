@@ -10,20 +10,20 @@ public:
                 st.pop();
                 int a = st.top();
                 st.pop();
-                
+
                 switch (t[0]) {
-                    case '+':
-                        st.push(a + b);
-                        break;
-                    case '-':
-                        st.push(a - b);
-                        break;
-                    case '*':
-                        st.push(a * b);
-                        break;
-                    case '/':
-                        st.push(a / b);
-                        break;
+                case '+':
+                    st.push(a + b);
+                    break;
+                case '-':
+                    st.push(a - b);
+                    break;
+                case '*':
+                    st.push(a * b);
+                    break;
+                case '/':
+                    st.push(a / b);
+                    break;
                 }
             }
         }
