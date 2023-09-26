@@ -6,7 +6,7 @@ public:
         } else if (nums.size() == 2) {
             return max(nums[0], nums[1]);
         }
-        
+
         vector<int> dp(nums.size(), 0);
         dp[0] = nums[0];
         dp[1] = max(nums[0], nums[1]);
