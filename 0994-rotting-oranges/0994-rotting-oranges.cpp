@@ -3,7 +3,7 @@ public:
     int orangesRotting(vector<vector<int>>& grid) {
         const int m = grid.size();
         const int n = grid[0].size();
-        
+
         queue<pair<int, int>> q;
         int fresh = 0;
         for (int i = 0; i < m; ++i) {
@@ -18,16 +18,16 @@ public:
         if (fresh == 0) {
             return 0;
         }
-        
+
         int mins = 0;
         while (!q.empty()) {
             const int size = q.size();
             bool rotten = false;
-            
+
             for (int i = 0; i < size; ++i) {
                 auto [x, y] = q.front();
                 q.pop();
-                
+
                 // down
                 if (x + 1 < m && grid[x + 1][y] == 1) {
                     grid[x + 1][y] = 2;
@@ -62,7 +62,7 @@ public:
                 ++mins;
             }
         }
-        
+
         return fresh == 0 ? mins : -1;
     }
 };
