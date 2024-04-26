@@ -5,7 +5,7 @@
 
 class Node {
 public:
-    virtual ~Node(){};
+    virtual ~Node() {};
     virtual int evaluate() const = 0;
 
 protected:
@@ -16,7 +16,7 @@ protected:
 
 class ValueNode : public Node {
 public:
-    ValueNode(int val) : val(val){};
+    ValueNode(int val) : val(val) {};
 
     int evaluate() const {
         return val;

@@ -1,8 +1,9 @@
 class HitCounter {
     map<int, int> counter;
-    
+
 public:
-    HitCounter() {}
+    HitCounter() {
+    }
 
     void hit(int timestamp) {
         counter[timestamp]++;
@@ -15,7 +16,8 @@ public:
         }
 
         int hits = 0;
-        for (auto itr = counter.lower_bound(lowbound); itr != counter.upper_bound(timestamp); ++itr) {
+        for (auto itr = counter.lower_bound(lowbound);
+             itr != counter.upper_bound(timestamp); ++itr) {
             hits += itr->second;
         }
         return hits;
