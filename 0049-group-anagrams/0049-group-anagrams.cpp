@@ -6,12 +6,12 @@ public:
         } else if (strs.size() == 1) {
             return {strs};
         }
-        
+
         vector<string> cpy(strs.begin(), strs.end());
         for (string& s : cpy) {
             sort(s.begin(), s.end());
         }
-        
+
         unordered_map<string, unordered_set<int>> anag;
         for (int i = 0; i < strs.size(); ++i) {
             anag[cpy[i]].insert(i);
