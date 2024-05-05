@@ -10,7 +10,7 @@ public:
         for (auto [c, freq] : m) {
             q.push(make_pair(freq, c));
         }
-        
+
         string res;
         while (!q.empty()) {
             auto [freq, c] = q.top();
