@@ -3,7 +3,7 @@ public:
     int buyChoco(vector<int>& prices, int money) {
         int m1 = INT_MAX;
         int m2 = INT_MAX;
-        
+
         for (int p : prices) {
             if (p < m1) {
                 m2 = m1;
