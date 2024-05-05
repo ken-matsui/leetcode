@@ -5,11 +5,11 @@ public:
         for (int n : nums) {
             cnt[n]++;
         }
-        
+
         const size_t size = nums.size();
         vector<int> res;
         for (auto [val, c] : cnt) {
-            if (c > (size/3)) {
+            if (c > (size / 3)) {
                 res.push_back(val);
             }
         }
