@@ -10,7 +10,7 @@ public:
         if (freq.empty()) {
             return -1;
         }
-        
+
         int minVal = INT_MAX;
         int maxFreq = INT_MIN;
         for (auto [val, f] : freq) {
