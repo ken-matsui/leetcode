@@ -5,7 +5,7 @@ public:
         for (int i = 0; i < names.size(); ++i) {
             pq.emplace(heights[i], names[i]);
         }
-        
+
         vector<string> res(names.size());
         for (int i = 0; i < names.size(); ++i) {
             res[i] = pq.top().second;
