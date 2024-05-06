@@ -12,7 +12,7 @@ public:
                 arr2.push_back(nums[i]);
             }
         }
-        
+
         vector<int> res(nums.size());
         int i;
         for (i = 0; i < arr1.size(); ++i) {
