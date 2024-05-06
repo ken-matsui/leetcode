@@ -1,7 +1,5 @@
 class Solution {
-    unordered_set<char> vowels{
-        'a', 'e', 'i', 'o', 'u'
-    };
+    unordered_set<char> vowels{'a', 'e', 'i', 'o', 'u'};
 
 public:
     bool isValid(string word) {
@@ -14,7 +12,7 @@ public:
                 return false;
             }
         }
-        
+
         bool hasVowel = false;
         bool hasConso = false;
         for (char c : word) {
