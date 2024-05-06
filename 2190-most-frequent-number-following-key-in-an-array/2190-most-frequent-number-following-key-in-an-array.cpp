@@ -7,7 +7,7 @@ public:
                 m[nums[i + 1]]++;
             }
         }
-        
+
         int maxFreq = INT_MIN;
         int maxVal = INT_MIN;
         for (const auto& [target, count] : m) {
