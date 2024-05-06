@@ -9,7 +9,7 @@ public:
         for (const string& w : words2) {
             m2[w]++;
         }
-        
+
         int count = 0;
         for (const auto& [w, f] : m1) {
             if (f == 1) {
