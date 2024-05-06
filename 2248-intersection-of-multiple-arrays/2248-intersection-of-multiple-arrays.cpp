@@ -14,7 +14,7 @@ public:
             }
             vs.push_back(s);
         }
-        
+
         priority_queue<int, vector<int>, greater<int>> pq;
         for (int n : nums[0]) {
             bool all_contains = true;
@@ -28,7 +28,7 @@ public:
                 pq.push(n);
             }
         }
-        
+
         vector<int> res;
         while (!pq.empty()) {
             res.push_back(pq.top());
