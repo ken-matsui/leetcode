@@ -6,7 +6,7 @@ public:
         for (const string& w : words) {
             v.push_back(unordered_set<char>(w.begin(), w.end()));
         }
-        
+
         for (int i = 0; i < words.size(); ++i) {
             for (int j = i + 1; j < words.size(); ++j) {
                 if (v[i] == v[j]) {
