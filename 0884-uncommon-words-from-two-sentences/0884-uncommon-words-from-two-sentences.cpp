@@ -3,14 +3,14 @@ public:
     vector<string> uncommonFromSentences(string s1, string s2) {
         unordered_map<string, int> st1;
         unordered_map<string, int> st2;
-        
+
         string word;
-        
+
         istringstream ss1(s1);
         while (ss1 >> word) {
             st1[word]++;
         }
-        
+
         istringstream ss2(s2);
         while (ss2 >> word) {
             st2[word]++;
