@@ -5,7 +5,7 @@ public:
         for (const string& s : arr) {
             m[s]++;
         }
-        
+
         for (const string& s : arr) {
             if (m[s] == 1) {
                 if (k == 1) {
