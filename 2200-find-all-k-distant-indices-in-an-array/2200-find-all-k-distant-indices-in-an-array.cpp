@@ -16,7 +16,7 @@ public:
                 }
             }
         }
-        
+
         vector<int> res;
         for (int i : s2) {
             res.push_back(i);
