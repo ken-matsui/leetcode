@@ -3,7 +3,7 @@
 
 class Solution {
     int n;
-    
+
     bool knowsNoOne(int i) {
         for (int j = 0; j < n; ++j) {
             if (i == j) {
@@ -15,7 +15,7 @@ class Solution {
         }
         return true;
     }
-    
+
     bool knownByEveryone(int i) {
         for (int j = 0; j < n; ++j) {
             if (i == j) {
