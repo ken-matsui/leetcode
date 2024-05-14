@@ -7,7 +7,7 @@ public:
             adjList[edge[0]].push_back(edge[1]);
             inDegree[edge[1]]++;
         }
-        
+
         vector<int> zeroInDegree;
         for (int i = 1; i < n + 1; ++i) {
             if (inDegree[i] == 0) {
