@@ -5,7 +5,7 @@ public:
             if (nums[i] != 0) {
                 continue;
             }
-            
+
             // found 0; check if we can skip this 0
             bool canSkip = false;
             int reqToSkip = 1;
